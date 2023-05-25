@@ -1,0 +1,14 @@
+name: oomphstat
+title: oomphstat
+username:
+account: phw142
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9188379
+bundleId: 7264262
+url: https://phw142.shinyapps.io/oomphstat/
+when: 1685047950.62347
+lastSyncTime: 1685047950.62349
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app_old.R|README.md|README.Rmd|www/favicon.ico

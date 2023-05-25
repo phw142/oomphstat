@@ -42,10 +42,10 @@ argonSidebar <- argonDashSidebar(
             tabName = "02_t",
             icon = icon("fas fa-tshirt", lib = 'font-awesome'),
             "The t Distribution"),
-        # argonSidebarItem(
-        # tabName = "03_chi2",
-        # icon = icon("fas fa-user-graduate", lib = 'font-awesome'),
-        # "The chi-squared Distribution")
+        argonSidebarItem(
+          tabName = "03_chi2",
+          icon = icon("fas fa-user-graduate", lib = 'font-awesome'),
+          "The chi-squared Distribution")
         ),
     br())
 
