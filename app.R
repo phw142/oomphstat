@@ -31,7 +31,7 @@ argonSidebar <- argonDashSidebar(
     size = "md",
     side = "left",
     id = "my_sidebar",
-    brand_logo = "ph-logo.jpg",
+    brand_logo = "ph-logo.png",
     argonSidebarHeader(title = "Navigation"), br(),
     argonSidebarMenu(
         argonSidebarItem(
@@ -66,12 +66,13 @@ argonHeader <- argonDashHeader(
     separator_color = "secondary")
 
 argonFooter <- argonDashFooter(
-    copyrights = "\uA9 Berkeley Online MPH, 2021",
+    copyrights = paste0("\uA9 Berkeley Online MPH, ", substr(today(),1,4)),
     src = "http://onlinemph.berkeley.edu",
     argonFooterMenu(
-        argonFooterItem("Original OOMPH Stat", src = "https://xandersph.shinyapps.io/OOMPHstat/"),
-        argonFooterItem("Originally based on SurfStat", src = "https://www.math.mcgill.ca/keith/surfstat/"),
-        argonFooterItem("Source Code", src = "https://github.com/geneh0/oomphstat-v2")
+        argonFooterItem("Based on SurfStat", src = "https://www.math.mcgill.ca/keith/surfstat/"),
+        argonFooterItem("v1", src = "https://xandersph.shinyapps.io/OOMPHstat/"),
+        argonFooterItem("v2", src = "https://github.com/geneh0/oomphstat-v2"),
+        argonFooterItem("Source Code", src = "https://github.com/phw142/oomphstat")
     )
 ) # end argonDashFooter
 
@@ -670,9 +671,10 @@ server <- function(input, output, session) {
                     chi2_value <- paste('+/-', abs(chi2_value))
                 }
 
-                HTML(paste0(argonH1(withMathJax("$\\chi^2$ score:"),
-                                    display = 4),
-                            h4(chi2_value)))
+                tagList(
+                  withMathJax(),
+                  argonH1("$$\\chi^2 score:$$", display = 4),
+                  h4(chi2_value))
             } else {
                 "Please enter a value between 0 and 1. "
             }
